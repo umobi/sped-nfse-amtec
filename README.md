@@ -10,13 +10,11 @@ Atende apenas o Municipio de Goiânia - GO
 - Padrão: AMTEC (Abrasf 2.0 modificado)
 - SOAP Version: 1.2
 
-- URL Única: https://nfse.goiania.go.gov.br/ws/nfse.asmx
-- xmlns: http://nfse.goiania.go.gov.br/xsd/nfse_gyn_v02.xsd
+- URL Única: <https://nfse.goiania.go.gov.br/ws/nfse.asmx>
+- xmlns: <http://nfse.goiania.go.gov.br/xsd/nfse_gyn_v02.xsd>
 
 [![Latest Stable Version][ico-stable]][link-packagist]
 [![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![License][ico-license]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -33,38 +31,41 @@ Este pacote é aderente com os [PSR-1], [PSR-2] e [PSR-4]. Se você observar neg
 
 Não deixe de se cadastrar no [grupo de discussão do NFePHP](http://groups.google.com/group/nfephp) para acompanhar o desenvolvimento e participar das discussões e tirar duvidas!
 
-
-
-## Instalação 
+## Instalação
 
 Este pacote está listado no Packgist foi desenvolvido para uso do Composer, portanto não será explicitada nenhuma alternativa de instalação.
 
 E deve ser instalado com:
-```
+
+```bash
 composer require nfephp-org/sped-nfse-amtec:dev-master --prefer-dist
 ```
 
 Ou ainda alterando o composer.json do seu aplicativo inserindo:
-```
+
+```json
 "require": {
     "nfephp-org/sped-nfse-amtec" : "dev-master"
 }
 ```
 
 Para utilizar o pacote em desenvolvimento (branch master) deve ser instalado com:
-```
+
+```bash
 composer require nfephp-org/sped-nfe:dev-master --prefer-dist
 ```
 
 Ou ainda alterando o composer.json do seu aplicativo inserindo:
-```
+
+```json
 "require": {
     "nfephp-org/sped-nfse-amtec" : "dev-master"
 }
 ```
 
 > NOTA: Ao utilizar este pacote na versão em desenvolvimento não se esqueça de alterar o composer.json da sua aplicação para aceitar pacotes em desenvolvimento, alterando a propriedade "minimum-stability" de "stable" para "dev".
-```
+
+```json
 "minimum-stability": "dev"
 ```
 
@@ -74,14 +75,14 @@ Ou ainda alterando o composer.json do seu aplicativo inserindo:
 
 > Obs.: Informações Tributárias e Operacionais do sistema NFS-e devem ser tratadas junto à GIOF - Gerência de Inteligência e Operações Fiscais, telefone 62 3524-4040. O e-mail suporte.nfse@goiania.go.gov.br é destinado apenas aos desenvolvedores no auxílio à implementação do web service e possui o prazo médio de resposta de 1 dia.
 
-## Agradecimentos 
+## Agradecimentos
 
 Devemos agradecer ao pessoal do [ACBR](https://www.projetoacbr.com.br/), pois com as informações fornecidas pelos colegas no forum do ACBR que foi possivel resolver os erros e entender o funcionamento desse "modelo".
 
 - GUTOPMC
 - Julio Chaves
- 
-Link com algumas informações fornecidas pelo colega GUTOPMC : https://docs.google.com/document/d/1B6L11ZGv2iXMfxCtIJxgzLaDCyeF-tCJ82ELysnJaTs/edit?pli=1
+
+Link com algumas informações fornecidas pelo colega GUTOPMC : <https://docs.google.com/document/d/1B6L11ZGv2iXMfxCtIJxgzLaDCyeF-tCJ82ELysnJaTs/edit?pli=1>
 
 ## Métodos
 
@@ -95,19 +96,18 @@ Existem apenas DOIS métodos no webservice:
 
 Além desses métodos do webservice também existe uma pagina onde é possivel obter um HTML formatado para impressão da NFSe.
 
-http://www2.goiania.go.gov.br/sistemas/snfse/asp/snfse00200w0.asp?inscricao=1300687&nota=370&verificador=MB94-C3ZA
+<http://www2.goiania.go.gov.br/sistemas/snfse/asp/snfse00200w0.asp?inscricao=1300687&nota=370&verificador=MB94-C3ZA>
 
-
-## GERAÇÃO SÍNCRONA DE UMA NFS-e (GerarNfse):
+## GERAÇÃO SÍNCRONA DE UMA NFS-e (GerarNfse)
 
 Este documento é provisório, de uso restrito e contém instruções para teste de utilização do web service da Prefeitura de Goiânia.
 
-O Web Service é baseado no modelo nacional de NFS-e, versão 2.0 da ABRASF, com adequações comentadas abaixo e descritas no esquema XSD informado. Para obter a documentação do modelo conceitual e manual de integração da ABRASF, consulte http://www.abrasf.org.br, em Temas Técnicos e escolha NFS-e.
+O Web Service é baseado no modelo nacional de NFS-e, versão 2.0 da ABRASF, com adequações comentadas abaixo e descritas no esquema XSD informado. Para obter a documentação do modelo conceitual e manual de integração da ABRASF, consulte <http://www.abrasf.org.br>, em Temas Técnicos e escolha NFS-e.
 
 A geração síncrona retorna o XML dos dados da nota gerada na mesma conexão da solicitação da geração.
 
 **ATENÇÃO: Não haverá geração de notas em lotes.**
- 
+
 No link abaixo existe um XML exemplo básico de solicitação de GERAÇÃO SÍNCRONA DE UMA NFS-e (GerarNfse).
 
 [GerarNFse](examples/gerarnfse.xml)
@@ -133,19 +133,19 @@ Note que este é o Processo Administrativo que qualquer Prestador normalmente pa
 Não existe processo administrativo para a alteração do modo do web service. **Apenas um e-mail deve ser enviado solicitando esta alteração.**
 
 Após finalizados os testes e concluído o Processo de autorização na Secretaria de Finanças, o Prestador deve solicitar através do e-mail suporte.nfse@goiania.go.gov.br a alteração da utilização do web service para modo PRODUÇÃO, informando a Inscrição Municipal e Razão Social da empresa. O prazo médio para atendimento é de 1 dia.
- 
+
 Endereço do Web Service:
-https://nfse.goiania.go.gov.br/ws/nfse.asmx
- 
+<https://nfse.goiania.go.gov.br/ws/nfse.asmx>
+
 Interfaces do Web Service (WSDL):
-https://nfse.goiania.go.gov.br/ws/nfse.asmx?wsdl
- 
-Schema XSD: 
-https://nfse.goiania.go.gov.br/xsd/nfse_gyn_v02.xsd
- 
+<https://nfse.goiania.go.gov.br/ws/nfse.asmx?wsdl>
+
+Schema XSD:
+<https://nfse.goiania.go.gov.br/xsd/nfse_gyn_v02.xsd>
+
 Namespace do XSD:
-http://nfse.goiania.go.gov.br/xsd/nfse_gyn_v02.xsd
- 
+<http://nfse.goiania.go.gov.br/xsd/nfse_gyn_v02.xsd>
+
 Adequações do esquema:
 
 - As adequações não acrescentam ou excluem elementos no esquema original da ABRASF versão 2.0.
@@ -155,8 +155,8 @@ Adequações do esquema:
 - As adequações estão documentadas em comentários inseridos antes de cada elemento no Schema XSD.
 
 > NOTA: as alegações acima ou estão incorretas ou incompletas e pouco ajudam.
- 
-### Resumo das adequações:
+
+### Resumo das adequações
 
 elemento tcIdentificacaoPrestador/tcCpfCnpj - OBRIGATÓRIO
 
@@ -181,41 +181,40 @@ elemento tcDadosServico/CodigoTributacaoMunicipio - OBRIGATÓRIO
 elemento tcDadosServico/ExigibilidadeISS (Layout alterado para minOccurs="0") - NÃO DEVE SER ENVIADO
 
 elemento tcDadosServico/MunicipioIncidencia - NÃO DEVE SER ENVIADO
- 
+
 elemento tcInfDeclaracaoPrestacaoServico/Competencia (Layout alterado para minOccurs="0") - NÃO DEVE SER ENVIADO
 
 elemento tcInfDeclaracaoPrestacaoServico/OptanteSimplesNacional  (Layout alterado para minOccurs="0") - NÃO DEVE SER ENVIADO
 
 elemento tcInfDeclaracaoPrestacaoServico/IncentivoFiscal (Layout alterado para minOccurs="0") - NÃO DEVE SER ENVIADO
- 
+
 elemento tcInfNfse/EnderecoPrestadorServico (Layout alterado para minOccurs="0") - NÃO SERÁ RETORNADO NO XML RESPOSTA
 
 elemento tcInfNfse/OrgaoGerador (Layout alterado para minOccurs="0") - NÃO SERÁ RETORNADO NO XML RESPOSTA
 
 elemento tcInfNfse/DeclaracaoPrestacaoServico (Layout alterado para minOccurs="0") - NÃO SERÁ RETORNADO NO XML RESPOSTA
- 
-### OBSERVAÇÕES IMPORTANTES:
 
-- Para emitir uma nota fiscal para pessoa física que não informou o CPF, utilize a seguinte identificação do tomador: “<IdentificacaoTomador><CpfCnpj><Cpf>00000000000</Cpf></CpfCnpj></IdentificacaoTomador>”.
-- Para emitir uma nota fiscal para pessoa física que não informou o endereço, não informe a tag <Endereco>.
+### OBSERVAÇÕES IMPORTANTES
+
+- Para emitir uma nota fiscal para pessoa física que não informou o CPF, utilize a seguinte identificação do tomador: `<IdentificacaoTomador><CpfCnpj><Cpf>00000000000</Cpf></CpfCnpj></IdentificacaoTomador>`.
+- Para emitir uma nota fiscal para pessoa física que não informou o endereço, não informe a tag `<Endereco>`.
 - O campo Razão Social do Tomador é sempre obrigatório e, no caso de Tomador do tipo pessoa física não informado, pode-se preenchê-lo com texto padrão (Ex.: “TOMADOR NAO INFORMADO”).
 - A tag alíquota será obrigatória apenas quando o Prestador é enquadrado no Simples Nacional. Nas demais situações essa informação não é obrigatória e será gerada pelo sistema.
-- As quebras de linha na tag \<Discriminacao\> devem ser representadas pelo conjunto "\s\n", conforme modelo ABRASF versão 2.0.
-- Os caracteres permitidos atualmente na tag \<Discriminacao\> são os seguintes, dentro das aspas: "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&$%()/+-.,;:=* ".
+- As quebras de linha na tag `<Discriminacao\>` devem ser representadas pelo conjunto "\s\n", conforme modelo ABRASF versão 2.0.
+- Os caracteres permitidos atualmente na tag `<Discriminacao\>` são os seguintes, dentro das aspas: "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&$%()/+-.,;:=* ".
 - A tabela de municípios a ser utilizada é a mesma em uso atualmente na DMS (Declaração Mensal de Serviços), REST (Relação de Serviços de Terceiros) e MAPA BANCÁRIO na Prefeitura de Goiânia.
 - A tabela de municípios contém diferenças em relação à tabela de municípios do IBGE [TABELA](examples/Municipios_SETEC_22.04.2013.txt).
 - O código da tabela de municípios no XML de envio deve ser preenchido com zeros à esquerda para totalizar as 7 posições do layout ABRASF versão 2.0.
-- A Prefeitura de Goiânia utiliza a tag \<CodigoTributacaoMunicipio\> para definir a Atividade Econômica à qual pertence o serviço prestado discriminado na nota.
-- A tag \<CodigoTributacaoMunicipio\> deve conter um dos códigos de atividade econômica prestacional existentes no Cadastro do Prestador na Prefeitura de Goiânia.
+- A Prefeitura de Goiânia utiliza a tag `<CodigoTributacaoMunicipio\>` para definir a Atividade Econômica à qual pertence o serviço prestado discriminado na nota.
+- A tag `<CodigoTributacaoMunicipio\>` deve conter um dos códigos de atividade econômica prestacional existentes no Cadastro do Prestador na Prefeitura de Goiânia.
 - Os Códigos de Atividade Econômica possuem 9 dígitos, são definidos por tabela da Prefeitura e podem ser consultados nos Sistemas DMS, REST ou NFS-e no portal da Prefeitura na Internet, na opção "Consulta Dados Cadastrais".
 - Um nota pode conter mais de um serviço desde que pertencentes ao mesmo código de atividade econômica (CodigoTributacaoMunicipio).
 
-
-### Instruções para VISUALIZAÇÃO DA NFS-e:
+### Instruções para VISUALIZAÇÃO DA NFS-e
 
 O link abaixo retorna a NFS-e formatada em HTML para visualização e impressão:
   
-http://www2.goiania.go.gov.br/sistemas/snfse/asp/snfse00200w0.asp?inscricao=Inscricao_municipal&nota=Numero_da_nota&verificador=Codigo_de_verificacao
+<http://www2.goiania.go.gov.br/sistemas/snfse/asp/snfse00200w0.asp?inscricao=Inscricao_municipal&nota=Numero_da_nota&verificador=Codigo_de_verificacao>
 
 Os campos "Numero da nota" e "Codigo de verificacao" são retornados no XML resposta de cada nota gerada.
 
@@ -223,23 +222,22 @@ O link também pode ser apenas enviado ao tomador por e-mail e ele mesmo imprimi
 
 Opcionalmente, o Prestador pode carregar uma imagem da sua logomarca através do sistema NFS-e no portal da Prefeitura na Internet.
 
-Essa é a única forma permitida de visualização e impressão das notas geradas. 
+Essa é a única forma permitida de visualização e impressão das notas geradas.
 
 **A formatação da nota pela aplicação do prestador não é permitida.**
 
 Por exemplo, a nota fictícia retornada nos testes de geração pode ser visualizada no link abaixo:
 
-http://www2.goiania.go.gov.br/sistemas/snfse/asp/snfse00200w0.asp?inscricao=1300687&nota=370&verificador=MB94-C3ZA
+<http://www2.goiania.go.gov.br/sistemas/snfse/asp/snfse00200w0.asp?inscricao=1300687&nota=370&verificador=MB94-C3ZA>
 
-
-## CONSULTA SÍNCRONA DE UMA NFS-e POR RPS (ConsultarNfseRps):
+## CONSULTA SÍNCRONA DE UMA NFS-e POR RPS (ConsultarNfseRps)
 
 Este é um documento provisório, de uso restrito e contém instruções para teste de web service com parceiros da Prefeitura de Goiânia.
- 
+
 O web service é baseado no modelo nacional de NFS-e, versão 2.0 da ABRASF, com adequações descritas no esquema XSD informado abaixo.
 
-Para obter a documentação do modelo conceitual e manual de integração da ABRASF, consulte http://www.abrasf.org.br, em Temas Técnicos escolha NFS-e.
- 
+Para obter a documentação do modelo conceitual e manual de integração da ABRASF, consulte <http://www.abrasf.org.br>, em Temas Técnicos escolha NFS-e.
+
 No link abaixo existe um XML exemplo básico de solicitação de CONSULTA SÍNCRONA DE UMA NFS-e POR RPS (ConsultarNfseRps).
 
 [ConsultaNfseRps](examples/consulta_nfse_rps.xml)
@@ -254,66 +252,44 @@ O certificado aceito nas transações deve ser emitido por uma Autoridade Certif
 
 Após a finalização da fase de testes e solicitada a adesão à NFS-e junto à Secretaria de Finanças, solicite-nos a mudança do modo TESTE para o modo PRODUÇÃO.
 
-
 ## DÚVIDAS FREQUENTES
 
-
 *P: Como realizo a alteração do modo do web service para PRODUÇÃO?*
-
 R: Após finalizados os testes e concluído o Processo de autorização na Secretaria de Finanças, o Prestador deve solicitar através do e-mail suporte.nfse@goiania.go.gov.br a alteração da utilização do web service para modo PRODUÇÃO, informando a Inscrição Municipal e Razão Social da empresa.
 
-
 *P: Como posso verificar se o Prestador está em modo TESTE ou modo PRODUÇÃO?*
-
 R: Inicialmente, todos os Prestadores estão em modo TESTE. O modo do Prestador só é alterado mediante solicitação do mesmo. Caso você esteja recebendo como retorno a nota fictícia de número 370, você está em modo TESTE.
 
-
 *P: O Prestador já está em modo PRODUÇÃO, porém necessito realizar testes na geração de notas. Como proceder?*
-
 R: Preencha a tag \<serie\> do XML com o valor "TESTE" ao consumir o serviço de geração de notas. Assim, o sistema se comportará como se o Prestador estivesse em modo TESTE para esta solicitação em específico.
 
-
 *P: Como proceder a substituição de notas?*
-
-R: Através do site na NFS-e (http://goiania.go.gov.br/nfse/), nos termos lá descritos, ou via Processo Administrativo junto à Secretaria de Finanças. Não existe substituição via web service.
-
+R: Através do site na NFS-e (<http://goiania.go.gov.br/nfse/>), nos termos lá descritos, ou via Processo Administrativo junto à Secretaria de Finanças. Não existe substituição via web service.
 
 *P: Como proceder o cancelamento de notas?*
-
 R: Através de Processo Administrativo junto à Secretaria de Finanças. Não existe cancelamento via web service.
 
-
 *P: Estou recebendo erros relativos ao protocolo SOAP. Como proceder?*
-
 R: Consulte os endereços:
-
-https://nfse.goiania.go.gov.br/ws/nfse.asmx?op=GerarNfse
-
-https://nfse.goiania.go.gov.br/ws/nfse.asmx?op=ConsultarNfseRps
-
+<https://nfse.goiania.go.gov.br/ws/nfse.asmx?op=GerarNfse>
+<https://nfse.goiania.go.gov.br/ws/nfse.asmx?op=ConsultarNfseRps>
 
 *P: Como adicionar dados ao campo "Informações Adicionais" via web service?*
-
 R: Só é possível preencher este campo da nota fiscal quando gerada através do site da NFS-e. Não há como adicionar dados a este campo ao gerar uma nota via web service. Seguindo os padrões da ABRASF, este campo é apenas de leitura, acessível apenas quando uma nota é consultada. Caso o Prestador deseje adicionar informações adicionais à nota via web service, recomendamos que utilize o campo "Discriminação" para este fim.
 
 *P: É necessário a utilização do Certificado Digital / Assinatura Digital quando o Prestador está em modo TESTE?*
-
 R: Sim.
 
 *P: É possível, quando em desenvolvimento, utilizar-se de um Certificado Digital alternativo ao do Prestador?*
-
 R: Sim, apenas temporariamente e quando o Prestador encontra-se em modo TESTE. O Certificado Digital deve ser válido e estar dentro das especificações descritas nas instruções de integração. Realize esta solicitação através do e-mail suporte.nfse@goiania.go.gov.br.
 
 *P: Existe uma numeração diferente para as notas fiscais geradas via web service?*
-
 R: Não. A numeração das notas fiscais eletrônicas seguem uma sequência única. Seja a geração realizada pelo site da NFS-e ou via web service, o sistema pegará o próximo número de nota para aquele Prestador.
 
 *P: O número do RPS deve obrigatoriamente acompanhar o número da nota fiscal?*
-
 R: Não. RPS e número de nota fiscal são numerações independentes. O número da nota é sequencial, controlado pela Prefeitura, e sempre continuará na mesma sequência única. O número do RPS é de controle do Prestador e deve ser único. Não é permitido repetir um número de RPS. O número de RPS não precisa ser necessariamente sequencial. Cada número de RPS é associado a um número de nota fiscal, não necessitando ambos serem iguais.
 
 *P: Existem registros duplicados na Tabela de Municípios? Como a Tabela de Municípios funciona?*
-
 R: Não existem registros duplicados na Tabela de Municípios.
 
 Todo registro cujo código é terminado com "00" se refere a um Município. Todo código terminado com uma numeração diferente de "00" se refere a um Distrito de um Município cujo código começa com a mesma numeração e termina com "00".
@@ -322,7 +298,9 @@ Exemplo:
 
 O registro abaixo se refere ao Município de Bom Jesus de Goiás. Sabemos disso pois o código deste registro (039200) termina com "00".
 
-039200;BOM JESUS     	                           ;GO
+``` CSV
+039200;BOM JESUS  ;GO
+```
 
 O registro abaixo se refere a um Distrito chamado Bom Jesus. Sabemos disso pois o código desse registro (024602) termina com "02", que é diferente de "00".
 
@@ -330,15 +308,14 @@ Ao pegarmos a primeira parte do código que precede os 2 últimos números (0246
 
 Logo este Bom Jesus é um Distrito do Município de Ceres, uma localidade diferente do Município de Bom Jesus.
 
-024602;BOM JESUS                                	;GO
-
-024600;CERES                                    	;GO
-
+``` CSV
+024602;BOM JESUS  ;GO
+024600;CERES      ;GO
+```
 
 ### INCONSISTÊNCIAS QUE COSTUMAM GERAR DÚVIDAS
 
-
-**Código: L002**
+#### Código: L002
 
 Mensagem: CPF ou CNPJ da assinatura digital não confere com o CPF ou CNPJ do prestador dos serviços.
 
@@ -346,8 +323,7 @@ Resolução:
 
 O CPF/CNPJ do Certificado Digital utilizado para assinar o XML não confere com o CPF/CNPJ do Prestador no XML. O CPF/CNPJ do Certificado Digital deve ser IDÊNTICO ao CPF/CNPJ constante nos dados do Prestador do XML e IDÊNTICO ao CPF/CNPJ constante no Cadastro do Prestador na Prefeitura de Goiânia. Não é permitido o uso de CNPJ raiz se este não for EXATAMENTE o mesmo CNPJ constante no Cadastro da Prefeitura. Por este motivo não é possível emitir notas fiscais para filiais utilizando Certificado Digital contendo o CNPJ raiz das matrizes quando estes não são EXATAMENTE iguais.
 
-
-**Código: L999**
+#### Código: L999
 
 Mensagem: ATIVIDADE INFORMADA INEXISTENTE NO SEU CADASTRO NA PREFEITURA
 
@@ -361,8 +337,7 @@ Os Códigos de Atividade Econômica possuem 9 dígitos, são definidos por tabel
 
 Um nota pode conter mais de um serviço desde que pertencentes ao mesmo código de atividade econômica (CodigoTributacaoMunicipio).
 
-
-**Código: L999**
+#### Código: L999(2)
 
 Mensagem: CODIGO DO MUNICIPIO NAO ENCONTRADO
 
@@ -372,18 +347,17 @@ Resolução:
 - A tabela de municípios contém diferenças em relação à tabela de municípios do IBGE.
 - O código da tabela de municípios no XML de envio deve ser preenchido com zeros à esquerda para totalizar as 7 posições do layout ABRASF versão 2.0.
 
-
-**Código: E160**
+#### Código: E160
 
 Mensagem: Arquivo em desacordo com o XML Schema.
 
 Resolução:
 
-Existem inconsistências em relação ao Schema XSD. Existem aplicações que realizam a checagem do XML com o XSD e aponta as inconsistências existentes, muitas delas gratuitas (Exemplo: http://www.corefiling.com/opensource/schemaValidate.html). Você também pode utilizar os próprios recursos da linguagem utilizada na implementação para isso.
+Existem inconsistências em relação ao Schema XSD. Existem aplicações que realizam a checagem do XML com o XSD e aponta as inconsistências existentes, muitas delas gratuitas (Exemplo: <http://www.corefiling.com/opensource/schemaValidate.html>). Você também pode utilizar os próprios recursos da linguagem utilizada na implementação para isso.
 
 Use os exemplos anexados às instruções de integração como base inicial de referência para a implementação.
 
-**Código: E172**
+#### Código: E172
 
 Mensagem: Arquivo enviado com erro na assinatura.
 
@@ -406,6 +380,7 @@ A tag que deve ser assinada no documento XML de geração de nota fiscal é a pr
         <Servico>
         ...
 ```
+
 No exemplo acima a tag a ser assinada é a identificada com o Id="rps1F"
 
 A tag \<InfDeclaracaoPrestacaoServico\> deve conter também o namespace xmlns="http://nfse.goiania.go.gov.br/xsd/nfse_gyn_v02.xsd", caso contrario haverá erro de assinatura.
@@ -436,25 +411,24 @@ A tag \<InfDeclaracaoPrestacaoServico\> deve conter também o namespace xmlns="h
 </soap12:Envelope>
 ```
 
-[ico-stable]: https://poser.pugx.org/nfephp-org/sped-nfse-amtec/version
-[ico-stars]: https://img.shields.io/github/stars/nfephp-org/sped-nfse-amtec.svg?style=flat-square
-[ico-forks]: https://img.shields.io/github/forks/nfephp-org/sped-nfse-amtec.svg?style=flat-square
-[ico-issues]: https://img.shields.io/github/issues/nfephp-org/sped-nfse-amtec.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/nfephp-org/sped-nfse-amtec/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/nfephp-org/sped-nfse-amtec.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/nfephp-org/sped-nfse-amtec.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/nfephp-org/sped-nfse-amtec.svg?style=flat-square
-[ico-version]: https://img.shields.io/packagist/v/nfephp-org/sped-nfse-amtec.svg?style=flat-square
-[ico-license]: https://poser.pugx.org/nfephp-org/nfephp/license.svg?style=flat-square
+[ico-stable]: https://poser.pugx.org/umobi/sped-nfse-amtec/version
+[ico-stars]: https://img.shields.io/github/stars/umobi/sped-nfse-amtec.svg?style=flat-square
+[ico-forks]: https://img.shields.io/github/forks/umobi/sped-nfse-amtec.svg?style=flat-square
+[ico-issues]: https://img.shields.io/github/issues/umobi/sped-nfse-amtec.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/umobi/sped-nfse-amtec/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/umobi/sped-nfse-amtec.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/umobi/sped-nfse-amtec.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/umobi/sped-nfse-amtec.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/umobi/sped-nfse-amtec.svg?style=flat-square
+[ico-license]: https://poser.pugx.org/umobi/nfephp/license.svg?style=flat-square
 [ico-gitter]: https://img.shields.io/badge/GITTER-4%20users%20online-green.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/nfephp-org/sped-nfse-amtec
-[link-travis]: https://travis-ci.org/nfephp-org/sped-nfse-amtec
-[link-scrutinizer]: https://scrutinizer-ci.com/g/nfephp-org/sped-nfse-amtec/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/nfephp-org/sped-nfse-amtec
-[link-downloads]: https://packagist.org/packages/nfephp-org/sped-nfse-amtec
+[link-packagist]: https://packagist.org/packages/umobi/sped-nfse-amtec
+[link-travis]: https://travis-ci.org/umobi/sped-nfse-amtec
+[link-scrutinizer]: https://scrutinizer-ci.com/g/umobi/sped-nfse-amtec/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/umobi/sped-nfse-amtec
+[link-downloads]: https://packagist.org/packages/umobi/sped-nfse-amtec
 [link-author]: https://github.com/nfephp-org
-[link-issues]: https://github.com/nfephp-org/sped-nfse-amtec/issues
-[link-forks]: https://github.com/nfephp-org/sped-nfse-amtec/network
-[link-stars]: https://github.com/nfephp-org/sped-nfse-amtec/stargazers
-
+[link-issues]: https://github.com/umobi/sped-nfse-amtec/issues
+[link-forks]: https://github.com/umobi/sped-nfse-amtec/network
+[link-stars]: https://github.com/umobi/sped-nfse-amtec/stargazers
