@@ -1,16 +1,22 @@
 {
-    "name": "nfephp-org/sped-nfse-amtec",
+    "name": "umobi/sped-nfse-amtec",
     "type": "library",
     "version": "1.0.0",
     "description": "API para geração e comunicação de RPS e NFSe no padão AMTEC Goiania.",
-    "keywords": ["nfe","nfse","sped","nfephp"],
-    "homepage": "https://github.com/nfephp-org/sped-nfse-amtec",
+    "keywords": ["nfe","nfse","sped","nfephp", "nfse goiania", "webservice"],
+    "homepage": "https://github.com/umobi/sped-nfse-amtec",
     "license": ["LGPL-3.0-or-later", "GPL-3.0-or-later", "MIT"],
     "authors": [
         {
             "name": "Roberto L. Machado",
             "email": "linux.rlm@gmail.com.br",
             "homepage": "http://www.nfephp.org",
+            "role": "Developer"
+        },
+        {
+            "name": "Ramon Vicente",
+            "email": "ramon@umobi.com.br",
+            "homepage": "https://www.umobi.com.br",
             "role": "Developer"
         }
     ],
@@ -51,9 +57,7 @@
         "rector": "vendor/bin/rector process src/ --config vendor/thecodingmachine/safe/rector-migrate.yml"
     },
     "extra": {
-        "branch-alias": {
-            "v1.0": "1.0-dev"
-        }
+        
     },
     "minimum-stability": "stable"
 }
