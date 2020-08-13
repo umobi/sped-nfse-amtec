@@ -103,7 +103,7 @@
                         "complemento": {
                             "required": true,
                             "type": "string",
-                            "minLength": 1,
+                            "minLength": 0,
                             "maxLength": 60
                         },
                         "bairro": {
@@ -124,7 +124,7 @@
                         },
                         "cep": {
                             "required": true,
-                            "type": "integer",
+                            "type": ["integer", "string"],
                             "pattern": "^[0-9]{8}"
                         }
                     }
@@ -136,7 +136,7 @@
             "type": "object",
             "properties": {
                 "itemlistaservico": {
-                    "required": true,
+                    "required": false,
                     "type": "string",
                     "minLength": 1,
                     "maxLength": 5
@@ -191,7 +191,7 @@
                             "type": ["number", "null"]
                         },
                         "issretido": {
-                            "required": true,
+                            "required": false,
                             "type": "integer",
                             "pattern": "^[1-2]{1}"
                         },
