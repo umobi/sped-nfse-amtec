@@ -42,6 +42,15 @@ class Tools
             'version' => '2.00',
             'msgns' => 'http://nfse.goiania.go.gov.br/xsd/nfse_gyn_v02.xsd',
             'soapns' => 'http://nfse.goiania.go.gov.br/ws/'
+        ],
+        '0025300' => [
+            'municipio' => 'Goiania',
+            'uf' => 'GO',
+            'homologacao' => 'https://nfse.goiania.go.gov.br/ws/nfse.asmx',
+            'producao' => 'https://nfse.goiania.go.gov.br/ws/nfse.asmx',
+            'version' => '2.00',
+            'msgns' => 'http://nfse.goiania.go.gov.br/xsd/nfse_gyn_v02.xsd',
+            'soapns' => 'http://nfse.goiania.go.gov.br/ws/'
         ]
     ];
     
@@ -57,7 +66,7 @@ class Tools
         $this->buildPrestadorTag();
         $wsobj = $this->urls;
         if (empty($this->urls[$this->config->cmun])) {
-            throw new \Exception('Apenas Goiania é aceito. cMun=5208707');
+            throw new \Exception('Apenas Goiania é aceito. cMun=[5208707,0025300]');
         }
         $this->wsobj = \Safe\json_decode(\Safe\json_encode($this->urls[$this->config->cmun]));
         $this->environment = 'producao';
