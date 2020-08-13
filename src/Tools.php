@@ -68,12 +68,27 @@ class Tools extends BaseTools
         $xml = $this->putPrestadorInRps($rps);
         $xmlsigned = $this->sign($xml);
         
-        $content = "<GerarNfseEnvio xmlns=\"{$this->wsobj->msgns}\">"
+        $content = "<{$operation}Envio xmlns=\"{$this->wsobj->msgns}\">"
             . $xmlsigned
-            . "</GerarNfseEnvio>";
+            . "</{$operation}Envio>";
         Validator::isValid($content, $this->xsdpath);
         
         return $this->send($content, $operation);
+    }
+
+    /**
+     * Retorna o link da NFSe na Prefeitura de Goiania
+     * @param string $nota
+     * @param string $verificador
+     * @return string
+     */
+    public function getNFSeLink($nota, $verificador)
+    {
+        return "http://www2.goiania.go.gov.br/sistemas/snfse/asp"
+        . "/snfse00200w0.asp?"
+        . "inscricao={$this->config->im}"
+        . "&nota=$nota"
+        . "&verificador=$verificador";
     }
     
     /**
@@ -84,11 +99,7 @@ class Tools extends BaseTools
      */
     public function getNFSeHtml($nota, $verificador)
     {
-        $url = "http://www2.goiania.go.gov.br/sistemas/snfse/asp"
-            . "/snfse00200w0.asp?"
-            . "inscricao={$this->config->im}"
-            . "&nota=$nota"
-            . "&verificador=$verificador";
+        $url = $this->getNFSeLink($nota, $verificador);
         $ch = \Safe\curl_init();
         $timeout = 5;
         \Safe\curl_setopt($ch, CURLOPT_URL, $url);
